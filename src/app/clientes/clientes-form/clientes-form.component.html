@@ -3,7 +3,7 @@
     <li class="breadcrumb-item active">Cadastro de Clientes</li>
 </ol>
 <div class="container">
-    <form>
+    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -35,7 +35,7 @@
         </div>
         <div class="row">
             <div class="col-md-2">
-                <button type="submit" class="btn-success" (click)="clicar()">
+                <button type="submit" class="btn-success">
                     <i class="fa fa-save"></i> Salvar
                 </button>
             </div>
