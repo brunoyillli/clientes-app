@@ -1,6 +1,6 @@
 <h1 class="mt-4">Clientes</h1>
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Consulta de Clientes</li>
+    <li class="breadcrumb-item active">Consulta</li>
 </ol>
 <div class="container">
     <div class="row">
@@ -28,6 +28,12 @@
                         <td>{{ cliente.nome }}</td>
                         <td>{{ cliente.cpf }}</td>
                         <td>{{ cliente.dataCadastro }}</td>
+                        <td>
+                            <button class="btn btn-primary"
+                                     routerLink="/clientes-form/{{ cliente.id }}">
+                                <i class="fa fa-pen-square"></i>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
