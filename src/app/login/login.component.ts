@@ -22,7 +22,6 @@ export class LoginComponent {
   ) { }
 
   onSubmit(){
-    console.log(`User: ${this.username}, Pass: ${this.password}`)
     this.router.navigate(['/home'])
   }
 
@@ -42,7 +41,11 @@ export class LoginComponent {
     this.authService
         .salvar(usuario)
         .subscribe( response =>{
+          this.errors = [];
           this.mensagemSucesso = "Cadastro realizado com sucesso! Efetue o login."
+          this.cadastrando = false;
+          this.username = "";
+          this.password = "";
         }, errorResponse => {
           this.mensagemSucesso = "";
           this.errors = errorResponse.error.errors;
